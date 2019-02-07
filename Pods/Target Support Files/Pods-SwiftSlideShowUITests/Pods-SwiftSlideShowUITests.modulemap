@@ -1,0 +1,6 @@
+framework module Pods_SwiftSlideShowUITests {
+  umbrella header "Pods-SwiftSlideShowUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

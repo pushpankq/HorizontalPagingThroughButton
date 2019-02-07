@@ -1,0 +1,16 @@
+PODS:
+  - CHIPageControl/Jaloro (0.1.6)
+
+DEPENDENCIES:
+  - CHIPageControl/Jaloro
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - CHIPageControl
+
+SPEC CHECKSUMS:
+  CHIPageControl: 21b85bb8c7d4d1d15fc4f353e1eb095eb75de5f1
+
+PODFILE CHECKSUM: a2be1e28dc865feb8d7a024923dbce282dbbf470
+
+COCOAPODS: 1.5.3

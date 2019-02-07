@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SwiftSlideShow" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sy3-6q-OW1">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </scrollView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vAq-Yx-HLc">
+                                <rect key="frame" x="29" y="100" width="317" height="367"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYB-SJ-vr4">
+                                <rect key="frame" x="29" y="500" width="317" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="vre-OR-tJa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AEV-il-At3">
+                                <rect key="frame" x="29" y="560" width="317" height="76"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="76" id="hAw-rX-vkL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t9o-8S-vZP">
+                                <rect key="frame" x="187" y="697" width="152" height="40"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="152" id="aNM-lr-vhm"/>
+                                    <constraint firstAttribute="height" constant="40" id="adK-ZH-oXm"/>
+                                </constraints>
+                                <state key="normal" title="NEXT">
+                                    <color key="titleColor" red="1" green="1" blue="0.099081070699999996" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextPage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ilc-xq-tbJ"/>
+                                </connections>
+                            </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="h3X-WM-q37">
+                                <rect key="frame" x="36" y="699" width="101" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="101" id="NS6-cL-O8x"/>
+                                    <constraint firstAttribute="height" constant="37" id="Vja-io-fKq"/>
+                                </constraints>
+                                <color key="pageIndicatorTintColor" red="0.87058823529411766" green="0.20784313725490194" blue="0.29411764705882354" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vAq-Yx-HLc" secondAttribute="trailing" constant="29" id="79L-pz-EnL"/>
+                            <constraint firstItem="AEV-il-At3" firstAttribute="top" secondItem="vYB-SJ-vr4" secondAttribute="bottom" constant="7" id="7Qh-Zd-yxK"/>
+                            <constraint firstAttribute="bottom" secondItem="Sy3-6q-OW1" secondAttribute="bottom" id="A1G-M1-xRd"/>
+                            <constraint firstItem="Sy3-6q-OW1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="EKK-pb-aVc"/>
+                            <constraint firstAttribute="trailing" secondItem="Sy3-6q-OW1" secondAttribute="trailing" id="Fkq-e1-N1p"/>
+                            <constraint firstItem="vAq-Yx-HLc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="56" id="LQW-MQ-Fkd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="t9o-8S-vZP" secondAttribute="trailing" constant="36" id="OTa-MO-d1g"/>
+                            <constraint firstItem="vYB-SJ-vr4" firstAttribute="top" secondItem="vAq-Yx-HLc" secondAttribute="bottom" constant="33" id="SnT-Cv-Pca"/>
+                            <constraint firstItem="Sy3-6q-OW1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="V0f-wO-dVV"/>
+                            <constraint firstItem="AEV-il-At3" firstAttribute="leading" secondItem="vYB-SJ-vr4" secondAttribute="leading" id="Z19-Xg-oXN"/>
+                            <constraint firstItem="vYB-SJ-vr4" firstAttribute="trailing" secondItem="vAq-Yx-HLc" secondAttribute="trailing" id="ZhQ-HR-mJf"/>
+                            <constraint firstItem="vAq-Yx-HLc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="29" id="gKh-8v-6Ph"/>
+                            <constraint firstItem="vYB-SJ-vr4" firstAttribute="leading" secondItem="vAq-Yx-HLc" secondAttribute="leading" id="gMP-Xh-hpK"/>
+                            <constraint firstItem="h3X-WM-q37" firstAttribute="top" secondItem="AEV-il-At3" secondAttribute="bottom" constant="63" id="itK-Ex-AhS"/>
+                            <constraint firstItem="AEV-il-At3" firstAttribute="trailing" secondItem="vYB-SJ-vr4" secondAttribute="trailing" id="lh0-3Q-n7B"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="h3X-WM-q37" secondAttribute="bottom" constant="42" id="mc4-6V-m7R"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="t9o-8S-vZP" secondAttribute="bottom" constant="41" id="ofo-2Y-Bd4"/>
+                            <constraint firstItem="h3X-WM-q37" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="rdp-UP-0BG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="pageControl" destination="h3X-WM-q37" id="UyA-vR-Aw6"/>
+                        <outlet property="scrollView" destination="Sy3-6q-OW1" id="RJz-5R-nSf"/>
+                        <outlet property="welcomeImage" destination="vAq-Yx-HLc" id="F5Y-0V-eZ0"/>
+                        <outlet property="welcomeSubTitleLabel" destination="AEV-il-At3" id="xqh-YY-Kpe"/>
+                        <outlet property="welcomeTitleLabel" destination="vYB-SJ-vr4" id="zTH-ox-o96"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="141.59999999999999" y="120.44334975369459"/>
+        </scene>
+    </scenes>
+</document>
