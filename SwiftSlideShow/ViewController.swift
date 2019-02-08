@@ -29,7 +29,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             self.pageControl.currentPage = pageIndex;
             welcomeTitleLabel.text = titleArray[pageIndex]
             welcomeSubTitleLabel.text = subTitleArray[pageIndex]
-            welcomeImage.image = imageArray[pageIndex]
+          //  welcomeImage.image = imageArray[pageIndex]
         }
         
     }
@@ -44,7 +44,9 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         pageIndex = 0
         configureScrollView()
-     //   pageWidth = scrollView.frame.width
+        addImageOnScrollView()
+
+       
 
     }
 
@@ -54,23 +56,51 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     }
     
     
-    // MARK: IB Action
+    // MARK: IBAction
     @IBAction func nextPage(_ sender: UIButton) {
         
         pageIndex = pageIndex+1
+        print(pageIndex)
+        print(titleArray.count)
         
-        if pageIndex < titleArray.count-2 {
+        if pageIndex < titleArray.count-1 {
             
-            scrollView.setContentOffset(CGPoint(x: (scrollViewWidth * CGFloat((pageIndex+1))), y: 0), animated: true)
+            scrollView.setContentOffset(CGPoint(x: (scrollViewWidth * CGFloat((pageIndex))), y: 0), animated: true)
             
         } else if pageIndex == titleArray.count-1 {
             
             sender.setTitle("Get Started", for: .normal)
-            scrollView.setContentOffset(CGPoint(x: (scrollViewWidth * CGFloat((pageIndex+1))), y: 0), animated: true)
+            scrollView.setContentOffset(CGPoint(x: (scrollViewWidth * CGFloat((pageIndex))), y: 0), animated: true)
             sender.isEnabled = false
-            
         }
         
+    }
+    
+    
+    func goToPoint(pageIndex:Int) {
+        
+        DispatchQueue.main.async(execute: { () -> Void in
+            UIView.animate(withDuration: 0.4, delay: 0, options: .curveLinear, animations: {
+                self.scrollView.contentOffset.x = (self.scrollViewWidth * CGFloat((pageIndex+1)))
+            }, completion: nil)
+            
+        })
+    }
+    
+    
+    func addImageOnScrollView()  {
+        
+        let imgOne = UIImageView(frame: CGRect(x:29, y:76,width:317, height:280))
+        imgOne.image = imageArray[0]
+        let imgTwo = UIImageView(frame: CGRect(x:scrollViewWidth + 29, y:76, width:317, height:280))
+        imgTwo.image = imageArray[1]
+        let imgThree = UIImageView(frame: CGRect(x:scrollViewWidth*2 + 29 , y:76, width:317, height:280))
+        imgThree.image = imageArray[2]
+        
+        self.scrollView.addSubview(imgOne)
+        self.scrollView.addSubview(imgTwo)
+        self.scrollView.addSubview(imgThree)
+
     }
     
     // MARK: Private Methods
